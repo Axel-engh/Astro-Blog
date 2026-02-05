@@ -1,101 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
-  background-color: #f1f5f9;
-  font-family: sans-serif;
+  background-color: #F5F3FF;
+  margin: 15px;
 }
 
-body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
-  line-height: 1.5;
+.base {
+  display: contents;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-h1 {
-  margin: 1rem 0;
-  font-size: 2.5rem;
-}
-
-/* nav styles */
 
 .menu {
-  background-color: #0d0950;
+  background-color: #0F172A;
   border: none;
-  color: #fff;
+  color: #F5F3FF;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 5px 10px;
 }
 
+.destac {
+  color: #6366F1;
+}
+
+
 .nav-links {
-  width: 100%;
+  width: 70%;
   display: none;
-  margin: 0;
+  background-color: #0F172A;  
 }
 
 .nav-links a {
-  display: block;
-  text-align: center;
-  padding: 10px 0;
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  color: #F5F3FF;
+  width: 100px;
   text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #0d0950;
+  font-size: 18px;
+}
+
+:has(.menu[aria-expanded="true"]) .nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0%;
+  width: 100%;
+  
+}
+
+html.dark {
+  background-color: #0F172A;
+  color: #F5F3FF;
+}
+
+.dark .menu {
+  background-color: #F5F3FF;
+  color: #0F172A;
+}
+
+.dark .nav-links {
+  background-color: #F5F3FF;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: #ff9776;
-}
-
-:has(.menu[aria-expanded="true"]) .nav-links {
-  display: unset;
-}
-
-html.dark {
-  background-color: #0d0950;
-  color: #fff;
-}
-
-.dark .menu {
-  background-color: #fff;
-  color: #000;
+  background-color: #F5F3FF;
+  border-radius: 30px;
+  color: #0F172A;
+  
 }
 
 .dark .nav-links a:hover,
 .dark .nav-links a:focus {
-  color: #0d0950;
-}
-
-.dark .nav-links a {
-  color: #fff;
+  color: #F5F3FF;
+  background-color: #0F172A;
 }
 
 .dark a {
-  color: #ff9776;
+  color: #0F172A;
 }
 
+.worddes {
+  font-weight: bold;
+  background: linear-gradient(90deg, #6366f1, #ec4899, #facc15); /* azul-indigo → rosa → amarillo */
+  -webkit-background-clip: text; /* recorta el background al texto */
+  -webkit-text-fill-color: transparent; /* hace el texto transparente para que se vea el gradiente */
+  display: inline-block;
+}
 
-@media screen and (min-width: 636px) {
+@media screen and (min-width: 870px) {
   .nav-links {
-    margin-left: 5em;
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
+    display: flex;
+    justify-content: center;
+    gap: 5rem; 
   }
 
-  .nav-links a {
-    display: inline-block;
-    padding: 15px 20px;
+  .base {
+    display: flex;
   }
 
-   .menu {
+  .menu {
     display: none;
   }
 }

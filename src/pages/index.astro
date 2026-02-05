@@ -1,12 +1,23 @@
 ---
-import { getCollection } from "astro:content";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Greeting from "../components/Greeting";
-const allPosts = await getCollection("blog");
-const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
-const pageTitle = "Índice de Etiquetas";
+import "../styles/global.css";
+
+
 ---
-<BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+<BaseLayout>
+  <div class="base flex mx-[15%] my-[5%]">
+  <div class="flex flex-col justify-center items-left px-4 sm:px-20 md:px-40 lg:px-60 xl:px-72 py-20 min-h-[30pc]">
+    <h1 class="text-center text-[40px] sm:text-xl md:text-left text-2xl lg:text-3xl leading-relaxed">
+      <span class="worddes">Frontend Developer</span> crafting <span class="worddes">clean, accessible web experiences.</span>
+      I build fast, user-focused interfaces with modern tools.
+    </h1>
+    <h2 class="text-center text-[32px] sm:text-lg md:text-left text-xl lg:text-2xl mt-4 leading-relaxed">
+      Hi, I’m Axel — a <span class="worddes">designer</span> who cares about clarity, detail, and purpose.
+    </h2>
+  </div>
+  <div class="flex items-center justify-center my-[5%] md:justify-end">
+    <img src="/img/background.webp" class="w-[90%]">
+  </div>
+  </div>
 </BaseLayout>

@@ -1,62 +1,30 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = "About Me";
-const identity = {
-  firstName: "Sarah",
-  country: "Canada",
-  occupation: "Technical Writer",
-  hobbies: ["photography", "birdwatching", "baseball"],
-};
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-const happy = true;
-const finished = true;
-const goal = 3;
-const skillColor = "crimson";
-const fonweihgt = "16px";
-const textCase = "uppercase";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+
+
 ---
-
-    <style define:vars={{skillColor, fonweihgt, textCase}}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-    color: var(--skillColor);
-    font-weight: bold;
-    font-size: var(--fonweihgt);
-    text-transform: var(--textCase);
-  }
-    </style>
-
-<BaseLayout pageTitle={pageTitle}>
-    <h2>... and my new Astro site!</h2>
-
-    <p>
-      I am working through Astro's introductory tutorial. This is the second
-      page on my website, and it's the first one I built myself!
-    </p>
-
-    <p>
-      This site will update as I complete more of the tutorial, so keep checking
-      back and see how my journey is going!
-    </p>
-    <p>Here are a few facts about me:</p>
-<ul>
-  <li class="skill">My name is {identity.firstName}.</li>
-  <li class="skill">I live in {identity.country} and I work as a {identity.occupation}.</li>
-  {identity.hobbies.length >= 2 &&
-    <li class="skill">Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-  }
-</ul>
-<p>My skills are:</p>
-<ul>
-  {skills.map((skill) => <li>{skill}</li>)}
-</ul>
-{happy && <p>I am happy to be learning Astro!</p>}
-
-{finished && <p>I finished this tutorial!</p>}
-
-{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-
+<BaseLayout>
+  <div class="base flex mx-[15%] my-[5%]">
+  <div class="flex flex-col justify-center items-left px-4 sm:px-20 md:px-40 lg:px-60 xl:px-72 py-20 min-h-[30pc]">
+    <h1 class="text-center text-[32px] sm                 :text-xl md:text-left text-2xl lg:text-3xl leading-relaxed">
+      Hi, I’m <span class="worddes">Axel Dorantes.</span>
+<span class="destac">Frontend Developer</span> focused on <span class="destac">clean</span> and <span class="destac">functional web experiences.</span>
+    </h1>
+    <h2 class="text-center text-[18px] sm:text-lg md:text-left text-xl lg:text-2xl mt-4 leading-relaxed">
+      I’m a frontend developer focused on building clear, accessible, and <span class="destac">well-structured</span> web experiences. I mainly work with <span class="destac">HTML</span>, <span class="destac">CSS</span>, and modern frameworks like <span class="destac">Astro</span> and <span class="destac">Tailwind</span>, paying close attention to both design and <span class="destac">performance</span>.
+    </h2>
+    <h2 class="text-center text-[18px] sm:text-lg md:text-left text-xl lg:text-2xl mt-4 leading-relaxed">
+      I enjoy <span class="destac">solving problems</span> in a practical way, writing <span class="destac">clean code</span>, and keeping projects <span class="destac">well organized</span>. When I face something new, I research and experiment to move projects forward without blocking progress.
+    <h2 class="text-center text-[18px] sm:text-lg md:text-left text-xl lg:text-2xl mt-4 leading-relaxed">
+      I’m currently looking for frontend development opportunities, freelance projects, or collaborations where I can keep learning while contributing real value from day one.
+    </h2>
+  </div>
+  <div class="flex items-center justify-center my-[5%] md:justify-end">
+    <img src="/img/user-cambiar.webp" class="w-[90%] rounded-full">
+  </div>
+  </div>
 </BaseLayout>
+
+<span class="destac">
