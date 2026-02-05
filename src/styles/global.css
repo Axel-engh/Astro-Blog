@@ -96,7 +96,7 @@ html.dark {
   .nav-links {
     display: flex;
     justify-content: center;
-    gap: 5rem; 
+    gap: 2rem; 
   }
 
   .base {
