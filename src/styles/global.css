@@ -84,6 +84,20 @@ html.dark {
   color: #0F172A;
 }
 
+.cont {
+    height: 350px;
+    text-align: center;
+    background-color: #0F172A;
+    color: #F5F3FF;
+  }
+
+.dark .cont {
+  height: 350px;
+    text-align: center;
+    background-color: #F5F3FF;
+    color: #0F172A;
+}
+
 .worddes {
   font-weight: bold;
   background: linear-gradient(90deg, #6366f1, #ec4899, #facc15); /* azul-indigo → rosa → amarillo */
@@ -106,4 +120,6 @@ html.dark {
   .menu {
     display: none;
   }
+
+
 }
